@@ -44,20 +44,20 @@ test_root2 = TreeNode(val=236,
                       )
 
 
-    class Solution:
-        def __init__(self):
-            self.answer = float('inf')
+class Solution:
+    def __init__(self):
+        self.answer = float('inf')
 
-        def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
-            self.find(root)
-            return self.answer
+    def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
+        self.find(root)
+        return self.answer
 
-        def find(self, root, prev_num=[]):
-            if root is None: return
-            if len(prev_num) > 0:
-                self.answer = min(self.answer, min(list(map(lambda x: abs(x-root.val), prev_num))))
-            self.find(root.left, prev_num + [root.val])
-            self.find(root.right, prev_num + [root.val])
+    def find(self, root, prev_num=[]):
+        if root is None: return
+        if len(prev_num) > 0:
+            self.answer = min(self.answer, min(list(map(lambda x: abs(x-root.val), prev_num))))
+        self.find(root.left, prev_num + [root.val])
+        self.find(root.right, prev_num + [root.val])
 
 
 print(Solution().getMinimumDifference(test_root))
