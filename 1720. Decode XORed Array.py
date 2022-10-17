@@ -12,16 +12,6 @@ Input: encoded = [1,2,3], first = 1
 Output: [1,0,2,1]
 Explanation: If arr = [1,0,2,1], then first = 1 and encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]
 """
-
-def nor(a, b):
-    result = ''
-    for i in bin((a | b)):
-        if i == 0:
-            result += '1'
-        else:
-            result += '0'
-    return int(result)
-
 first = 1
 encoded = [1,2,3]
 
