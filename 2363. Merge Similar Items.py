@@ -18,3 +18,10 @@ Therefore, we return [[1,6],[3,9],[4,5]].
 
 items1 = [[1, 1], [4, 5], [3, 8]]
 items2 = [[3, 1], [1, 5]]
+
+num_id = list(set(list(map(lambda x: x[0], items1)) + list(map(lambda x: x[0], items2))))
+items1 = {i[0]: i[1] for i in items1}
+items2 = {i[0]: i[1] for i in items2}
+
+result = [[i, items1.get(i, 0) + items2.get(i, 0)] for i in sorted(num_id)]
+print(result)
