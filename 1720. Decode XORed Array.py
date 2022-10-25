@@ -19,9 +19,3 @@ result = [first]
 for i in encoded:
     result.append(result[-1] ^ i)
 print(result)
-
-
-00
-10
-
-10

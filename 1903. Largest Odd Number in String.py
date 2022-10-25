@@ -9,13 +9,8 @@ Output: "5"
 Explanation: The only non-empty substrings are "5", "2", and "52". "5" is the only odd number
 """
 
-num = "52"
+num = "565652"
 
-if int(num) % 2 == 0:
-    odd_list = []
-    for i in num:
-        if int(i) % 2 == 1:
-            odd_list.append(i)
-    print(max(odd_list))
-else:
-    print(num)
+for i in range(len(num), -1, -1):
+    print(num[:i])
+print('xxx')
